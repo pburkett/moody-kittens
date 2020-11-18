@@ -17,6 +17,20 @@ function addKitten(event) {
   event.preventDefault()
   let form = event.target
   let kittenName = form.name.value
+  console.log(kittens)
+  for (x = 0; x < kittens.length; x++) {
+
+    if (kittens[x]['name'] == kittenName) {
+      if (kittens[x]['affection'] == 0) {
+        window.alert("This cat will never forgive you.")
+        return
+      }
+      else {
+        window.alert("You already have this cat!")
+        return
+      }
+    }
+  }
   let kittenId = ""
   kittenId += generateId()
 
@@ -185,3 +199,4 @@ function generateId() {
     Math.floor(Math.random() * 1000000000)
   )
 }
+//fart
